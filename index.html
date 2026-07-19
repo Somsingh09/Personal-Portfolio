@@ -1011,7 +1011,8 @@ footer{ padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 4
     <a href="#home" class="back-top" aria-label="Back to top">↑</a>
   </div>
 </footer>
-
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 (function(){
   "use strict";
@@ -1125,6 +1126,7 @@ footer{ padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 4
     }
     
     formMsg.className = 'form-msg ok';
+    emailjs.init("Vu952Elgnemm-eqod");
     emailjs.sendForm(
       "service_xgt0t8a",
       "template_dwda66s",
@@ -1133,10 +1135,12 @@ footer{ padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 4
     )
     .then(()=> {
       alert("Message sent Successfully!");
+      document.getElementById("contactForm").reset();
     })
     .catch((error)=> {
       alert("Failed to send message");
       console.log(error);
+      alert(error.text || JSON.stringify(error));
     })
   });
 
