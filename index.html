@@ -890,7 +890,7 @@ footer{ padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 4
         <div class="eyebrow">resume</div>
         <h2 class="section-title">Education &amp; experience.</h2>
       </div>
-      <a href="https://drive.google.com/file/d/1DEUaGnQfEDeCfjcyAd228nRRhnRhITL4/view?usp=drivesdk" class="btn btn-primary reveal" id="resumeDownload2" download="https://drive.google.com/file/d/1DEUaGnQfEDeCfjcyAd228nRRhnRhITL4/view?usp=drivesdk">Download Full Resume (PDF) ↓</a>
+      <a href="https://drive.google.com/file/d/1DEUaGnQfEDeCfjcyAd228nRRhnRhITL4/view?usp=drivesdk" class="btn btn-primary reveal" id="resumeDownload2">Download Full Resume (PDF) ↓</a>
     </div>
 
     <div class="resume-cols">
@@ -1108,7 +1108,7 @@ footer{ padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 4
     });
   });
 
-  /* ---------- Contact form (front-end only demo) ---------- */
+  /* ---------- Contact form ---------- */
   const form = document.getElementById('contactForm');
   const formMsg = document.getElementById('formMsg');
   form.addEventListener('submit', (e) => {
@@ -1123,9 +1123,6 @@ footer{ padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 4
       formMsg.className = 'form-msg err';
       return;
     }
-    // NOTE: This is a front-end only demo. To actually receive messages,
-    // connect this form to a backend (Node/Express + Nodemailer), or a
-    // service like Formspree / EmailJS, and send the form data there.
     formMsg.textContent = '✓ Message ready to send — connect this form to your backend/EmailJS to go live.';
     formMsg.className = 'form-msg ok';
     form.reset();
@@ -1134,8 +1131,7 @@ footer{ padding: 40px 0 60px; border-top: 1px solid var(--border); margin-top: 4
   /* ---------- Resume download placeholders ---------- */
   ['resumeDownload', 'resumeDownload2'].forEach(id => {
     document.getElementById(id).addEventListener('click', (e) => {
-      e.preventDefault();
-      //alert('Add your resume PDF (e.g. resume.pdf) to the project folder and update this link\'s href to point to it.');
+      window.location.href = "https://drive.google.com/file/d/1DEUaGnQfEDeCfjcyAd228nRRhnRhITL4/view?usp=drivesdk";
     });
   });
 
